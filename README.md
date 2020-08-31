@@ -34,4 +34,5 @@ Collection of papers on NLP reasoning
 | Name | Link | Description | Year | Size |
 | --- | --- | --- | --- | --- | 
 | BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions | [Link](https://www.kaggle.com/averkij/boolq-dataset) | It is Binary Classfication Q&A | 2019 | 10MB |
-| COVID-19 Open Research Dataset Challenge (CORD-19)| [Link](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) | Tons of COVID research papers | 2020 | 17GB |
+| WIKIQA: A Challenge Dataset for Open-Domain Question Answering | [Link](https://www.aclweb.org/anthology/D15-1237.pdf) | Open domain QA dataset | 2015 | 20MB |
+| COVID-19 Open Research Dataset Challenge (CORD-19)| [Link](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) | COVID research papers for data curation | 2020 | 17GB |
