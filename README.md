@@ -37,5 +37,5 @@ Collection of papers on NLP reasoning
 | WIKIQA: A Challenge Dataset for Open-Domain Question Answering | [Link](https://www.aclweb.org/anthology/D15-1237.pdf) | Open domain QA dataset | 2015 | 20MB |
 | TREC(Text Retrieval Conference) QA Track|[link](https://trec.nist.gov/data/qamain.html)|IR-based QA to find factoid answer| 1999 ~ 2007 | 10MB? | 
 | QNLI(Question Natural Language Inference)| [link](https://paperswithcode.com/sota/natural-language-inference-on-qnli) | Sentence pairs version derived from the SQUAD | 2016 | ? |
-| COVID-QA: A Question Answering Dataset for COVID-19| [link](https://github.com/deepset-ai/COVID-QA) | 2020 | ? |
+| COVID-QA: A Question Answering Dataset for COVID-19| [link](https://github.com/deepset-ai/COVID-QA) | Annotated by volunteer biomedical experts on scientific articles related to COVID-19| 2020 | 2,019 question/answer pairs |
 | COVID-19 Open Research Dataset Challenge (CORD-19)| [Link](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) | COVID research papers for data curation | 2020 | 17GB |
