@@ -22,7 +22,7 @@ Collection of papers on NLP reasoning
 | Question Answering Using Deep Learning|[Link](https://arxiv.org/pdf/1911.04879.pdf) |
 | Advances in Natural Language Question Answering: A Review|[Link](https://arxiv.org/pdf/1904.05276.pdf) |
 | A Survey on Why-Type Question Answering Systems|[Link](https://cs224d.stanford.edu/reports/StrohMathur.pdf) |
-
+| Github for newest QA trends|[Link](https://github.com/seriousran/awesome-qa)|
 
 
 
