@@ -1,0 +1,14 @@
+import json
+from googletrans import Translator
+trans = Translator()
+with open("gen_dev.json", "r") as r:
+    j = json.load(r)
+    for i, inst in enumerate(j):
+        if "Qu" in inst["Question"] or "qu" in inst["Question"]:
+            print(inst["Question"])
+            j[i]["Question"] = trans.translate(inst["Question"], src='fr', dest='en').text
+        else:
+            continue
+
+with open("gen_dev_filter.json", "w") as w:
+    json.dump(j, w, indent=4)
