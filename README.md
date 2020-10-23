@@ -11,7 +11,7 @@ Jordan : data is from SwagAF dataset (http://rowanzellers.com/swag/)
 + 10K QA were extracted for sequential time reseasoning
 + Context, Question, and Answer were extracted
 + Context was created using backtranslation with Google Translator
-+ Questions and answers were left in the orginally langauge
++ Questions and answers were left in the orginal langauge
   + This is due to Questions being very short, some even one word. 
 
 
