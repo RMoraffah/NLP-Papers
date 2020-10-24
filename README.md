@@ -68,5 +68,6 @@ The dataset contains data for 5 reasoning tasks as follows:
 
 ## References:
 [1] Richardson, Matthew, Christopher JC Burges, and Erin Renshaw. "Mctest: A challenge dataset for the open-domain machine comprehension of text." Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing. 2013.
+
 [2] Huang, Lifu, et al. "Cosmos qa: Machine reading comprehension with contextual commonsense reasoning." arXiv preprint arXiv:1909.00277 (2019).
 
