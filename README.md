@@ -23,6 +23,7 @@ Raha Moraffah: Task: Generating Causality data
 
 ### Data Format
 The aggregated dataset consists of ...(Put the number here!) number of samples stored in a json file. Each data instance consists of a context (in natural language form), a questions Q associated with the type of reasoning (R), 4 choices(C), and the correct answer. The format of each instance of the data is shown below.
+
 {
 
 Context : ,
