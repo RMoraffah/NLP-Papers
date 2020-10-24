@@ -64,7 +64,7 @@ The dataset contains data for 5 reasoning tasks as follows:
 
 ## Code Instructions
 
-+ Causality data generation: In order to run the codes for generating causality data the following packages need to be installed: google translate, Pandas, Json. The code for generating causality data is given in Jupyter notebook in Codes directory.
++ Causality data generation: In order to run the codes for generating causality data the following packages need to be installed: google translate, Pandas, Json. The code for generating causality data is given in a Jupyter notebook file called Data_Prep_caiusal.ipynb in Codes directory.
 
 ## References:
 [1] Richardson, Matthew, Christopher JC Burges, and Erin Renshaw. "Mctest: A challenge dataset for the open-domain machine comprehension of text." Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing. 2013.
