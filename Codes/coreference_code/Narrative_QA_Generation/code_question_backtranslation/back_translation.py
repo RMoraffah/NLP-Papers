@@ -29,4 +29,3 @@ with open("valid_q.txt", "w") as f:
         en = trans.translate(fr.text, src='fr', dest='en')                              
         contextprint(en.text)
         f.write(en.text+"\n\n\n")
-
