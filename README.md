@@ -14,6 +14,12 @@ Jordan : data is from SwagAF dataset (http://rowanzellers.com/swag/)
 + Questions and answers were left in the orginal langauge
   + This is due to Questions being very short, some even one word. 
 
+John : property inference questions are based upon (belief states and property states)
++ A subset of data were extracted both from Cosmos and Quoref
++ A script was used to sift through a subset of these questions in respect to belief states and property states
++ Context, Question, and Answer were extracted. One of the datasets, had only A and B. A and B answers were backtranslated in order to create C and D
++ Context Was backtranslated to create a synthetic dataset, then from that the question aspect were backtranslated to create another dataset
+ 
 Raha Moraffah: Task: Generating Causality data
 + Causality data have been generation by performing back-translation on the context of the datasets extracted from MC-Test data [1] and Cosmos data [2].
 + The data contains 10313 QA samples, where 10k are extracted from Cosmos data which is specifically designed for causality questions and 313 samples are extracted from MC-Test data by filtering the "Why type" questions.
