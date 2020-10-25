@@ -13,11 +13,9 @@
 ## Dataset Description
 ### Individual Dataset Descriptions
 Ujun : Coreference data is made up with two part (extracted, generated), and each part has total 10K
-'''
-+ In extracted directory, Context/Question/Answer is extracted from [NarrativeQA](https://github.com/vjg28/BERT_on_NarrativeQA)
-+ In generated directory, Context is generated text of NarrativeQA with [ILM model](https://github.com/chrisdonahue/ilm)
-+ In generated directory, Question is back-translated text of NarrativeQA with [Google Translator](https://pypi.org/project/googletrans/)
-'''
++ <code>In extracted directory</code>, Context/Question/Answer is extracted from [NarrativeQA](https://github.com/vjg28/BERT_on_NarrativeQA)
++ In generated directory, Context is generation of contexts in NarrativeQA with [ILM model](https://github.com/chrisdonahue/ilm)
++ In generated directory, Question is back-translation of questions in NarrativeQA with [Google Translator](https://pypi.org/project/googletrans/)
 
 Jordan : data is from SwagAF dataset (http://rowanzellers.com/swag/)
 + 10K QA were extracted for sequential time reseasoning
