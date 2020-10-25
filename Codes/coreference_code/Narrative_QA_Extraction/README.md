@@ -6,4 +6,4 @@ Instruction
 + It extracts noun phrases in NarrativeQA and
 + It creates multiple choice answers from noun phrases
 3. check out the result in ./code directory
-4. There will be two outputs : train.json, dev.json
+4. There will be two outputs : train.json, valid.json
