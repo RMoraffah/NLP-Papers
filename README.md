@@ -1,9 +1,10 @@
 # Phase 2: Automated Data Creation 
 
-### Final dataset can be found at [this link](https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing)
+## Final dataset can be found at [this link](https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing)
 + We each were to extract 10K datapoints from different datasets so we can build a robust model. 
 + Data Integration for all tasks is done by <code>Raha Moraffah</code>
-### Diagram of Distribution
+
+## Diagram of Distribution
 | Name | Dataset directory | Specification
 | --- | --- | --- |
 | Ujun Jeong | /coreference_data | Coreference Resolution |
@@ -13,9 +14,20 @@
 |Nick Dodd | /unanswerable_qa| Unanswerable Question Inference |
 + You can <code>recreate dataset</code> by using programs in <code>/Codes</code> directory
 
+## Dataset Description
 
-## Dataset Description : 1) Individual work 2) Data Format
-### 1) Individual Work
+### 1) Data Format
+The aggregated dataset is stored in a json file. Each data instance consists of a context (in natural language form), a questions Q associated with the type of reasoning (R), 4 choices(C), and the correct answer. The format of each instance of the data is shown below.
+
+    {
+    Context : ,
+    Question: ,
+    Reasoning type:,
+    Choices: {A:, B:, C:, D:},
+    Answer : 
+    }
+    
+### 2) Individual Contribution
 Ujun : Coreference data is made up with two part (extracted, generated), and each part has total 10K
 + <code>In /extracted directory</code>, Context/Question/Answer is extracted from [NarrativeQA](https://github.com/vjg28/BERT_on_NarrativeQA)
 + <code>In /generated directory</code>, Context is generation of contexts in NarrativeQA with [ILM model](https://github.com/chrisdonahue/ilm)
@@ -63,17 +75,6 @@ Nick Dodd: Task: Unanswerable Questions
 + Currently, there is a gap in the research community concerning multiple choice datasets that incorporate unanswerable questions. In fact, the vast majority of the publicly available datasets currently do not contain unanswerable questions, and the few that do are mostly developed for Extractive QA tasks. The one exception to this norm is in the CosmosQA dataset, where roughly 6.7% of the questions are unanswerable. Parsing for these questions can be found in the data_gen/datasets/cosmos_qa directory. Another multiple choice dataset that has unanswerable questions is the ComQA dataset, however since this dataset was developed for open domain question answering and lacks context paragraphs, it has not been included at this stage of the project. More research would be needed on how to best leverage information retrieval systems to create relevant context paragraphs for this dataset. Finally, SQUAD 2.0, the canonical dataset for unanswerable questions and the one that popularized the use of them in the QA and RC research community, was developed for extractive QA tasks, and thus doesn't contain a list of multiple answer choices, making it unusable as-is for our multiple choice question dataset. However, recent work in distractor generation (the generation of artificial answer choices in MCQ generation) seems to be a promising approach that could be leveraged to create multiple choice questions from this dataset by generating distractors (plausible answers) given context-question pairs. Towards this end, and to enable the use of SQUAD 2.0 unanswerable questions in our synthetic dataset generation process, several recent systems for distrator generation were considered, which can be found in the data_gen/models directory. These systems are then used with the pre-processed and parsed unanswerable questions from SQUAD 2.0 in order create an augmented set of multiple choice questions that comply to our format. These questions are then consumed by the custom squad data handler, which is used to generate subspan paraphrases of the dataset.
 
 + A combined subsample of around 10k unanswerable questions resulting from these processes can be found in data_gen/datasets/unanswerable_qa.json
-
-### 2) Data Format
-The aggregated dataset is stored in a json file. Each data instance consists of a context (in natural language form), a questions Q associated with the type of reasoning (R), 4 choices(C), and the correct answer. The format of each instance of the data is shown below.
-
-    {
-    Context : ,
-    Question: ,
-    Reasoning type:,
-    Choices: {A:, B:, C:, D:},
-    Answer : 
-    }
 
 ## Code Instructions & Requirements
 
