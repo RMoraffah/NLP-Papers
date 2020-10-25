@@ -1,10 +1,10 @@
 # Phase 2: Automated Data Creation 
 
-## Final dataset can be found at [this link](https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing)
+## Final dataset can be found at [[THIS LINK]](https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing)
 + We each were to extract 10K datapoints from different datasets so we can build a robust model. 
 + Data Integration for all tasks is done by <code>Raha Moraffah</code>
 
-## Diagram of Distribution
+## Dataset Diagram
 | Name | Dataset directory | Specification
 | --- | --- | --- |
 | Ujun Jeong | /coreference_data | Coreference Resolution |
