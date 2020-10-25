@@ -58,6 +58,8 @@ The dataset contains data for 5 reasoning tasks as follows:
   3. Event inference:(1) subsequent state(2)event duration. By Jordan Miller
   4. Property inference: (1) entity properties (2) belief states. By John Cava
   5. Unanswerable question By Nick Dodd
+  
+  -Data Integration for all tasks is done by Raha Moraffah
 
 
 
