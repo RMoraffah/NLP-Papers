@@ -51,7 +51,7 @@ Currently, there is a gap in the research community concerning multiple choice d
 A combined subsample of around 10k unanswerable questions resulting from these processes can be found in data_gen/datasets/unanswerable_qa.json
 
 ### Data Format
-The aggregated dataset consists of ...(Put the number here!) number of samples stored in a json file. Each data instance consists of a context (in natural language form), a questions Q associated with the type of reasoning (R), 4 choices(C), and the correct answer. The format of each instance of the data is shown below.
+The aggregated dataset is stored in a json file. Each data instance consists of a context (in natural language form), a questions Q associated with the type of reasoning (R), 4 choices(C), and the correct answer. The format of each instance of the data is shown below.
 
 {
 
