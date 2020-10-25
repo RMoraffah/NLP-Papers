@@ -14,6 +14,6 @@ Instruction
 1. put train.json and valid.json in this directory (which is output of extracted NarrativeQA)
 2. put train_c.txt and valid_c.txt in this directory (which is output of generated context)
 3. put train_q.txt and valid_q.txt in this directory (which is output of backtranslation question)
-4. run merge_genbacktranslation.py
+4. run merge_gen_backtranslation.py
 5. There will be two outputs : train_gen.json, valid_gen.json
 
