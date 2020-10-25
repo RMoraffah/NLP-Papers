@@ -8,8 +8,8 @@
 | John Cava| /Property_Questions | Property Inference |
 | Raha Moraffah| /Causality Questions | Causal relationship Inference |
 |Nick Dodd | /unanswerable_qa| Unanswerable Question Inference |
-+ You can <code>recreate</code> dataset by using programs in /Codes directory
-+ Instuction for using program is written in README.md under /Codes directory
++ You can <code>recreate dataset</code> by using programs in /Codes directory
++ <code> Instuction for program</code> is written in README.md under /Codes directory
 
 ## Dataset Description : 1) Individual work 2) Dataset Format
 ### Individual Dataset Descriptions
