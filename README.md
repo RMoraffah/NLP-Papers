@@ -79,7 +79,7 @@ Nick Dodd: Task: Unanswerable Questions
 ## Code Instructions & Requirements
 
 + **Causality data generation** : In order to run the codes for generating causality data the following packages need to be installed: google translate, Pandas, Json. The code for generating causality data is given in a Jupyter notebook file called Data_Prep_Causal.ipynb in Codes directory.
-+ **Coreference data generation** : <code> Instuction for program</code> is written in <code>README.md</code> under <code>/Codes/coreference_code</code> directory. Also, there is <code>requirements.txt</codes> under <code>/Codes/coreference_code</code> directory for dependent libraries.
++ **Coreference data generation** : <code> Instuction for program</code> is written in <code>README.md</code> under <code>/Codes/coreference_code</code> directory. Also, there is <code>requirements.txt</codes> under <code>/Codes/coreference_code</code> directory for dependent libraries in this program.
 
 ## References:
 [1] Richardson, Matthew, Christopher JC Burges, and Erin Renshaw. "Mctest: A challenge dataset for the open-domain machine comprehension of text." Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing. 2013.
