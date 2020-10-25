@@ -1,5 +1,8 @@
 # Phase 2: Automated Data Creation 
 
+### Final dataset can be found at [this link](https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing)
++ We each were to extract 10K datapoints from different datasets so we can build a robust model. 
++ Data Integration for all tasks is done by <code>Raha Moraffah</code>
 ### Diagram of Distribution
 | Name | Dataset directory | Specification
 | --- | --- | --- |
@@ -10,6 +13,7 @@
 |Nick Dodd | /unanswerable_qa| Unanswerable Question Inference |
 + You can <code>recreate dataset</code> by using programs in <code>/Codes</code> directory
 + <code> Instuction for program</code> is written in README.md under <code>/Codes</code> directory
+
 
 ## Dataset Description : 1) Individual work 2) Data Format
 ### 1) Individual Work
@@ -71,23 +75,6 @@ The aggregated dataset is stored in a json file. Each data instance consists of 
     Choices: {A:, B:, C:, D:},
     Answer : 
     }
-
-### Final dataset can be found at: https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing
-
-
-## Task Distribution
-- We each were to extract 10K datapoints from different datasets so we can build a robust model. 
-- Each member was in charge of creating the dataset for a specific reasoning task. In total, we cover five different types of reasoning. Each member's associated reasoning task is as follows:
-  1.Text Based question: (1) temporal order, (2) coreference By Ujun Jeong
-  2. Causality By Raha Moraffah
-  3. Event inference:(1) subsequent state(2)event duration. By Jordan Miller
-  4. Property inference: (1) entity properties (2) belief states. By John Cava
-  5. Unanswerable question By Nick Dodd
-  
-  -Data Integration for all tasks is done by Raha Moraffah
-
-
-
 
 ## Code Instructions
 
