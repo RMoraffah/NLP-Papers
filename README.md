@@ -64,27 +64,12 @@ Nick Dodd: Task: Unanswerable Questions
 The aggregated dataset is stored in a json file. Each data instance consists of a context (in natural language form), a questions Q associated with the type of reasoning (R), 4 choices(C), and the correct answer. The format of each instance of the data is shown below.
 
     {
-
     Context : ,
-
-Question: ,
-
-Reasoning type:,
-
-Choices: {A:, B:, C:, D:},
-
-Answer : 
-
-}
-
-The dataset contains data for 5 reasoning tasks as follows:
-
-1. Text Based question: (1) temporal order, (2) coreference
-2. Causality 
-3. Event inference:(1) subsequent state(2)event duration.
-4. Property inference: (1) entity properties (2) belief states.
-5. Unanswerable question
-
+    Question: ,
+    Reasoning type:,
+    Choices: {A:, B:, C:, D:},
+    Answer : 
+    }
 
 ### Final dataset can be found at: https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing
 
