@@ -38,9 +38,9 @@ Nick Dodd: Task: Unanswerable Questions
 
 + Due to outdated API and non-backwards compatibility of tensorflow, we will need to install some specific tool chains in order to get this model running. To isolate the toolchain from the other models, start by creating a new virtual environment by choosing a Python interpreter and making a .\venv directory to hold it. For example: C:\Users\nickg\Documents\cse576\project\data_gen\models\paraphraser>python -m venv --system-site-packages paraphraser_venv
 
-+Activate the virtual environment: C:\Users\nickg\Documents\cse576\project\data_gen\models\paraphraser>paraphraser_venv\Scripts\activate
++ Activate the virtual environment: C:\Users\nickg\Documents\cse576\project\data_gen\models\paraphraser>paraphraser_venv\Scripts\activate
 
-+Navigate to paraphraser root. (i.e. cd C:\Users\nickg\Documents\cse576\project\data_gen\models\paraphraser) Install python 3.6, I specifically used Python 3.6.8 Install tensorflow, spacy, and download the engligh language model for spacy: pip install --upgrade tensorflow==1.4.0 pip install spacy python -m spacy download en
++ Navigate to paraphraser root. (i.e. cd C:\Users\nickg\Documents\cse576\project\data_gen\models\paraphraser) Install python 3.6, I specifically used Python 3.6.8 Install tensorflow, spacy, and download the engligh language model for spacy: pip install --upgrade tensorflow==1.4.0 pip install spacy python -m spacy download en
 
 + Run the modified inference python script, using the checkpoint files to load the trained model: In data_gen/models/paraphraser/paraphraser/python, run python inference.py <path_to_trained_model_checkpoint> For example: python inference.py --checkpoint=C:\Users\nickg\Documents\cse576\project\data_gen\models\paraphraser\trained_model_checkpoints\train-20180325-001253\model-171856
 
