@@ -1,5 +1,14 @@
 # Phase 2: Automated Data Creation 
 
+### Diagram of Distribution
+| Name | Dataset directory | Specification
+| --- | --- | --- |
+| Ujun Jeong | /coreference_data | Coreference Resolution |
+| Jordan | /SequentialDataset | Sequential Time Inference |
+| John | /Property_Questions | Property Inference |
+| Raha | /Causality Questions | Causal relationship Inference |
+|Nick | /unanswerable_qa| Unanswerable Question Inference |
+
 ## Dataset Description
 ### Individual Dataset Descriptions
 Ujun : Coreference data is made up with two part (extracted, generated), and each part has total 10K
