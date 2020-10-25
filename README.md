@@ -4,10 +4,10 @@
 | Name | Dataset directory | Specification
 | --- | --- | --- |
 | Ujun Jeong | /coreference_data | Coreference Resolution |
-| Jordan | /SequentialDataset | Sequential Time Inference |
-| John | /Property_Questions | Property Inference |
-| Raha | /Causality Questions | Causal relationship Inference |
-|Nick | /unanswerable_qa| Unanswerable Question Inference |
+| Jordan Miller| /SequentialDataset | Sequential Time Inference |
+| John Cava| /Property_Questions | Property Inference |
+| Raha Moraffah| /Causality Questions | Causal relationship Inference |
+|Nick Dodd | /unanswerable_qa| Unanswerable Question Inference |
 
 ## Dataset Description
 ### Individual Dataset Descriptions
