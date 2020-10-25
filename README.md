@@ -11,8 +11,8 @@
 + You can <code>recreate dataset</code> by using programs in <code>/Codes</code> directory
 + <code> Instuction for program</code> is written in README.md under <code>/Codes</code> directory
 
-## Dataset Description : 1) Individual work 2) Dataset Format
-### Individual Dataset Descriptions
+## Dataset Description : 1) Individual work 2) Data Format
+### 1) Individual Work
 Ujun : Coreference data is made up with two part (extracted, generated), and each part has total 10K
 + <code>In /extracted directory</code>, Context/Question/Answer is extracted from [NarrativeQA](https://github.com/vjg28/BERT_on_NarrativeQA)
 + <code>In /generated directory</code>, Context is generation of contexts in NarrativeQA with [ILM model](https://github.com/chrisdonahue/ilm)
@@ -61,7 +61,7 @@ Nick Dodd: Task: Unanswerable Questions
 
 + A combined subsample of around 10k unanswerable questions resulting from these processes can be found in data_gen/datasets/unanswerable_qa.json
 
-### Data Format
+### 2) Data Format
 The aggregated dataset is stored in a json file. Each data instance consists of a context (in natural language form), a questions Q associated with the type of reasoning (R), 4 choices(C), and the correct answer. The format of each instance of the data is shown below.
 
     {
