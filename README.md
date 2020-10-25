@@ -12,7 +12,6 @@
 | Raha Moraffah| /Causality Questions | Causal relationship Inference |
 |Nick Dodd | /unanswerable_qa| Unanswerable Question Inference |
 + You can <code>recreate dataset</code> by using programs in <code>/Codes</code> directory
-+ <code> Instuction for program</code> is written in README.md under <code>/Codes</code> directory
 
 
 ## Dataset Description : 1) Individual work 2) Data Format
@@ -76,9 +75,10 @@ The aggregated dataset is stored in a json file. Each data instance consists of 
     Answer : 
     }
 
-## Code Instructions
+## Code Instructions & Requirements
 
-+ Causality data generation: In order to run the codes for generating causality data the following packages need to be installed: google translate, Pandas, Json. The code for generating causality data is given in a Jupyter notebook file called Data_Prep_Causal.ipynb in Codes directory.
++ **Causality data generation** : In order to run the codes for generating causality data the following packages need to be installed: google translate, Pandas, Json. The code for generating causality data is given in a Jupyter notebook file called Data_Prep_Causal.ipynb in Codes directory.
++ **Coreference data generation** : <code> Instuction for program</code> is written in README.md under <code>/Codes</code> directory
 
 ## References:
 [1] Richardson, Matthew, Christopher JC Burges, and Erin Renshaw. "Mctest: A challenge dataset for the open-domain machine comprehension of text." Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing. 2013.
