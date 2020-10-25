@@ -8,14 +8,15 @@
 | John Cava| /Property_Questions | Property Inference |
 | Raha Moraffah| /Causality Questions | Causal relationship Inference |
 |Nick Dodd | /unanswerable_qa| Unanswerable Question Inference |
-+ You can recreate data by using programs in /Codes directory
++ You can <code>recreate</code> dataset by using programs in /Codes directory
++ Instuction for using program is written in README.md under /Codes directory
 
-## Dataset Description
+## Dataset Description : 1) Individual work 2) Dataset Format
 ### Individual Dataset Descriptions
 Ujun : Coreference data is made up with two part (extracted, generated), and each part has total 10K
-+ <code>In extracted directory</code>, Context/Question/Answer is extracted from [NarrativeQA](https://github.com/vjg28/BERT_on_NarrativeQA)
-+ In generated directory, Context is generation of contexts in NarrativeQA with [ILM model](https://github.com/chrisdonahue/ilm)
-+ In generated directory, Question is back-translation of questions in NarrativeQA with [Google Translator](https://pypi.org/project/googletrans/)
++ <code>In /extracted directory</code>, Context/Question/Answer is extracted from [NarrativeQA](https://github.com/vjg28/BERT_on_NarrativeQA)
++ <code>In /generated directory</code>, Context is generation of contexts in NarrativeQA with [ILM model](https://github.com/chrisdonahue/ilm)
++ <code>In /generated directory</code>, Question is back-translation of questions in NarrativeQA with [Google Translator](https://pypi.org/project/googletrans/)
 
 Jordan : data is from SwagAF dataset (http://rowanzellers.com/swag/)
 + 10K QA were extracted for sequential time reseasoning
