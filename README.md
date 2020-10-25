@@ -27,7 +27,7 @@ The aggregated dataset is stored in a json file. Each data instance consists of 
     Answer : 
     }
     
-### 2) Individual Contribution
+### 2) Individual Work
 Ujun : Coreference data is made up with two part (extracted, generated), and each part has total 10K
 + <code>In /extracted directory</code>, Context/Question/Answer is extracted from [NarrativeQA](https://github.com/vjg28/BERT_on_NarrativeQA)
 + <code>In /generated directory</code>, Context is generation of contexts in NarrativeQA with [ILM model](https://github.com/chrisdonahue/ilm)
