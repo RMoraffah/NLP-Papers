@@ -32,7 +32,7 @@ mlp = MLP()
 # Get dataset
 dataset = create_dataset()
 # Dictionary for answer into numerical value
-dic_ = {'A':1,'B':2,'C':3,'D':4}
+dic_ = {'A':0,'B':1,'C':2,'D':3}
 
 for data in dataset:
     context = data[0]
@@ -48,7 +48,7 @@ for data in dataset:
     indices = [i+1 for i, x in enumerate(token) if x == "[SEP]"]
     # Use the indices and the index [SEP] for the correct answer
     target = [0.0]*(len(token)+2)
-    target[dic_[answer]] = 1.0
+    target[indices[dic_[answer]]] = 1.0
     target = torch.LongTensor(target)
     # Input the tokenized input into a torch input
     input_ids = torch.tensor(tokenizer.encode(token, add_special_tokens=True)).unsqueeze(0)
