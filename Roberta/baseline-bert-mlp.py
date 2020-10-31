@@ -1,5 +1,6 @@
 from transformers import EncoderDecoderModel, BertTokenizer
 import torch
+import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
 from create_dataset import create_dataset
@@ -14,7 +15,7 @@ from create_dataset import create_dataset
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 # initialize Bert2Bert from pre-trained checkpoints
 model = EncoderDecoderModel.from_encoder_decoder_pretrained('bert-base-uncased', 'bert-base-uncased')
-
+model.cuda()
 # MLP Model Delcaration
 class MLP(nn.Module):
 
@@ -28,11 +29,14 @@ class MLP(nn.Module):
 # Cross Entropy Loss for training
 ce_loss = nn.CrossEntropyLoss()
 # Initialization of MLP 
-mlp = MLP()
+mlp = MLP().cuda()
 # Get dataset
 dataset = create_dataset()
 # Dictionary for answer into numerical value
 dic_ = {'A':0,'B':1,'C':2,'D':3}
+
+learning_rate=1e-3
+optimizer = optim.Adam(list(model.parameters()) + list(mlp.parameters()),lr=learning_rate)
 
 for data in dataset:
     context = data[0]
@@ -49,9 +53,9 @@ for data in dataset:
     # Use the indices and the index [SEP] for the correct answer
     target = [0.0]*(len(token)+2)
     target[indices[dic_[answer]]] = 1.0
-    target = torch.LongTensor(target)
+    target = torch.LongTensor(target).cuda()
     # Input the tokenized input into a torch input
-    input_ids = torch.tensor(tokenizer.encode(token, add_special_tokens=True)).unsqueeze(0)
+    input_ids = torch.tensor(tokenizer.encode(token, add_special_tokens=True)).unsqueeze(0).cuda()
     ##print(token,len(token))
     ##print(indices, answer,dic_[answer])
     output = model(input_ids=input_ids, decoder_input_ids=input_ids, return_dict=True)
@@ -65,5 +69,8 @@ for data in dataset:
     # Print loss
     print(loss.item())
     # TODO: loss.backward()
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
     break
 

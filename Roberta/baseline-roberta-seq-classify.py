@@ -2,16 +2,22 @@ from transformers import RobertaTokenizer, RobertaForSequenceClassification
 from transformers import RobertaConfig, RobertaModel
 from create_dataset import create_dataset
 import torch
+import torch.nn as nn
+import torch.optim as optim
 
 tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
 model = RobertaForSequenceClassification.from_pretrained('roberta-base',num_labels=4, return_dict=True)
 
+learning_rate=1e-3
+optimizer = optim.Adam(model.parameters(),lr=learning_rate)
+
+model.cuda()
 # Get dataset
 dataset = create_dataset()
 # Dictionary for answer into numerical value
 dic_ = {'A':0,'B':1,'C':2,'D':3}
 
-for data in dataset:
+for i,data in enumerate(dataset):
     context = data[0]
     question = data[1]
     a = data[2]
@@ -21,12 +27,18 @@ for data in dataset:
     answer = data[6]
     # Tokenize the Context/Question/[SEP]A/[SEP]B/[SEP]C/[SEP]D
     inputs = tokenizer(context + ' ' + question + '[SEP]' + a + '[SEP]' + b + '[SEP]' + c + '[SEP]' + d , return_tensors="pt")
-    # Get the indices of the [SEP] in the new tokenized list
-    indices = [i+1 for i, x in enumerate(inputs) if x == "[SEP]"]
-    target = torch.LongTensor([dic_[answer]])
+    # Turn inputs and attentino masks into cuda
+    inputs['input_ids'] = inputs['input_ids'].cuda()
+    inputs['attention_mask'] = inputs['attention_mask'].cuda()
+    # Target as LongTensor and into cuda
+    target = torch.LongTensor([dic_[answer]]).cuda()
+    # Input data into model, alongside target
     outputs = model(**inputs, labels=target)
     loss = outputs.loss
     logits = outputs.logits
     print(loss.item())
+    optimizer.zero_grad()
     loss.backward()
-    break
+    optimizer.step()
+    if i > 5:
+        break
