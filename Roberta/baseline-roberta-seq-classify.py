@@ -12,10 +12,13 @@ learning_rate=1e-3
 optimizer = optim.Adam(model.parameters(),lr=learning_rate)
 
 model.cuda()
-# Get dataset
-dataset = create_dataset()
+     
 # Dictionary for answer into numerical value
 dic_ = {'A':0,'B':1,'C':2,'D':3}
+
+# Get dataset
+batch_size = 32
+dataset = create_dataset()
 
 for i,data in enumerate(dataset):
     context = data[0]
