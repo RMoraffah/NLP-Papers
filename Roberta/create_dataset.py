@@ -4,7 +4,7 @@ import json
 def create_dataset():
 
     final_dataset = []
-
+    
     # Gather Causality Questions
     file_ = glob.glob('./../Causality Questions/Causality_Data_Final.json')[0]
     with open(file_,'r') as f:
@@ -80,22 +80,30 @@ def create_dataset():
     print('----------')
 
     # Gather Unanswerable Questions
-    # NOTE: NEED WORK
-    '''
     file_ = glob.glob('./../unanswerable_qa/unanswerable_qa.json')[0]
     with open(file_,'r') as f:
-        dataset = json.loads(f.read())
-        for key in dataset:
-            #print(dataset[key])
-            context = dataset[key]['Context']
-            print(context)
-            question = dataset[key]['Question']
-            print(question)
-            for choice in dataset[key]['Choices']:
-                print(choice,dataset[key]['Choices'][choice])
-            break
+        content = f.read()
+        content = content.strip('[')
+        content = content.strip(']')
+        content = content.replace('}, {', '}[JSON_SEP]{')
+        content = content.split('[JSON_SEP]')
+        for con in content:
+            d = []
+            data = json.loads(con)
+            context = data['Context']
+            d.append(context)
+            #print(context)
+            question = data['Question']
+            #print(question)
+            d.append(question)
+            for choice in data['Choices']:
+                #print(choice,data['Choices'][choice])
+                d.append(data['Choices'][choice])
+            answer = data['Answer']
+            d.append(answer)
+            #print(answer)
+            final_dataset.append(d)
     print('----------')
-    '''
 
     # Gather Sequential Questions
     file_ = glob.glob('./../SequentialDataset/SequentailData.json')[0]
@@ -126,7 +134,6 @@ def create_dataset():
             #print(answer)
             final_dataset.append(d)
     print('----------')
-
     return final_dataset
 
-#create_dataset()
+create_dataset()
