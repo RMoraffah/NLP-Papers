@@ -4,7 +4,7 @@ import json
 def create_dataset():
 
     final_dataset = []
-    
+
     # Gather Causality Questions
     file_ = glob.glob('./../Causality Questions/Causality_Data_Final.json')[0]
     with open(file_,'r') as f:
@@ -26,7 +26,7 @@ def create_dataset():
             #print(answer)
             final_dataset.append(d)
 
-    print('----------')
+    #print('----------')
     # Gather Property Questions
     file_ = glob.glob('./../Property_Questions/dataset-final.json')[0]
     with open(file_,'r') as f:
@@ -56,7 +56,7 @@ def create_dataset():
             #print(answer)
             final_dataset.append(d)
 
-    print('----------')
+    #print('----------')
 
     # Gather Coreference Questions
     file_ = glob.glob('./../coreference_data/extracted/filtered_narrativei_train.json')[0]
@@ -77,7 +77,7 @@ def create_dataset():
             d.append(answer)
             #print(answer)
             final_dataset.append(d)
-    print('----------')
+    #print('----------')
 
     # Gather Unanswerable Questions
     file_ = glob.glob('./../unanswerable_qa/unanswerable_qa.json')[0]
@@ -103,7 +103,7 @@ def create_dataset():
             d.append(answer)
             #print(answer)
             final_dataset.append(d)
-    print('----------')
+    #print('----------')
 
     # Gather Sequential Questions
     file_ = glob.glob('./../SequentialDataset/SequentailData.json')[0]
@@ -133,7 +133,7 @@ def create_dataset():
             d.append(answer)
             #print(answer)
             final_dataset.append(d)
-    print('----------')
+    #print('----------')
     return final_dataset
 
 create_dataset()

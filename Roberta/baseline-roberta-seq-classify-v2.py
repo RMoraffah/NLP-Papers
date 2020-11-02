@@ -6,6 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 import random
 import time
+import numpy as np
 
 tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
 model = RobertaForSequenceClassification.from_pretrained('roberta-base',num_labels=4, return_dict=True)
@@ -64,7 +65,7 @@ for epoch in range(max_epoch):
         loss.backward()
         optimizer.step()
     end = time.time()
-    epoch_loss = mean(epoch_loss)
+    epoch_loss = np.mean(epoch_loss)
     print(epoch, epoch_loss, 'epoch time:', end-start)
     total_epoch_loss.append(epoch_loss)
     # Save model
