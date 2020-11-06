@@ -279,12 +279,12 @@ def train(args):
   # Create training dir
   os.makedirs(args.train_dir, exist_ok=True)
   resuming = os.path.exists(out_fn_to_fp('step.pkl'))
-                                                                                  
+
   # Create tokenizer
   tokenizer = ilm.tokenize_util.Tokenizer[args.tokenizer_name.upper()]
   if tokenizer == ilm.tokenize_util.Tokenizer.CUSTOM:
     ilm.tokenize_util.set_custom_vocab_fp(args.tokenizer_custom_vocab_fp)
- 
+   
   # Update tokenizer
   base_vocab_size = ilm.tokenize_util.vocab_size(tokenizer)
   start_infill_id = base_vocab_size + 0
@@ -302,10 +302,15 @@ def train(args):
     additional_ids_to_tokens[t_id] = t_tok
     mask_type_to_id[t] = t_id
   print(additional_ids_to_tokens)
+
   vocab_size = ilm.tokenize_util.update_tokenizer(additional_ids_to_tokens, tokenizer)
   with open(out_fn_to_fp('additional_ids_to_tokens.pkl'), 'wb') as f:
     pickle.dump(additional_ids_to_tokens, f)
-  
+
+  print(additional_ids_to_tokens)
+  additional_tokens_to_ids = {v:k for k, v in additional_ids_to_tokens.items()}   
+  print(additional_tokens_to_ids)
+
   # Load training data
   if True:
     print('Loading training data')
@@ -398,7 +403,15 @@ def train(args):
   eval_sampler = SequentialSampler(eval_data)
   eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size, drop_last=True)
 
+  MODEL_DIR = '/tmp/ilm/models/sto_ilm'
 
+  # Load model for prediction
+  device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')       
+  model = GPT2LMHeadModel.from_pretrained(MODEL_DIR)                          
+  model.resize_token_embeddings(vocab_size)
+  model.to(device)
+  model.eval()                                                                
+  '''
   # Load model
   print('Initializing model...')
   set_random_seed(args.seed)
@@ -420,6 +433,7 @@ def train(args):
   model.to(device)
   model.train()
   # Reset random seed in case model init triggered RNG
+  '''
   '''
   # Initialize optimizers
   if not args.eval_only:
@@ -457,39 +471,20 @@ def train(args):
   '''
   if args.eval_only:
     print('Data curation')
-
-    MASK_CLS = 'ilm.mask.hierarchical.MaskHierarchical'                             
-    MODEL_DIR = '/tmp/ilm/models/sto_ilm'
-    
-    tokenizer = ilm.tokenize_util.Tokenizer.GPT2                                    
-    with open(os.path.join(MODEL_DIR, 'additional_ids_to_tokens.pkl'), 'rb') as f:  
-        additional_ids_to_tokens = pickle.load(f)                                   
-        additional_tokens_to_ids = {v:k for k, v in additional_ids_to_tokens.items()}   
-    try:                                                                            
-        ilm.tokenize_util.update_tokenizer(additional_ids_to_tokens, tokenizer)     
-    except ValueError:                                                              
-        print('Already updated')                                                    
-    print(additional_tokens_to_ids)
-    
     w=open("data/curation/"+"train_c.txt", "w")
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')           
-    for i, eval_batch in enumerate(train_dataloader):                            
-        eval_inputs, eval_tts = tuple(t.to(device) for t in eval_batch)         
-        model = GPT2LMHeadModel.from_pretrained(MODEL_DIR)                      
-        model.eval()                                                            
-        _ = model.to(device)                                                    
+    for i, train_batch in enumerate(train_dataloader):                            
+        train_inputs, train_tts = tuple(t.to(device) for t in train_batch)         
                                                                                 
-        context_ids = eval_inputs.tolist()                                      
+        context_ids = train_inputs.tolist()[0]                                          
+        generated=infill_with_ilm(                                          
+            model,                                                          
+            additional_tokens_to_ids,                                       
+            context_ids,                                                       
+            num_infills=1)                                                  
         encoded=[]                                                              
-        decoded=[]                                                              
-        for instance in context_ids :                                           
-            generated=infill_with_ilm(                                          
-                model,                                                          
-                additional_tokens_to_ids,                                       
-                instance,                                                       
-                num_infills=1)                                                  
-            encoded.append(ilm.tokenize_util.decode(instance, tokenizer))       
-            decoded.append(ilm.tokenize_util.decode(generated[0], tokenizer))   
+        decoded=[]                                                             
+        encoded.append(ilm.tokenize_util.decode(context_ids, tokenizer))       
+        decoded.append(ilm.tokenize_util.decode(generated[0], tokenizer))   
         print("---------- Encoded ",i," ----------")                            
         for enc in encoded :                                                    
             print(enc)                                                          
@@ -503,21 +498,17 @@ def train(args):
     w=open("data/curation/"+"valid_c.txt", "w")
     for i, eval_batch in enumerate(eval_dataloader):
         eval_inputs, eval_tts = tuple(t.to(device) for t in eval_batch)
-        model = GPT2LMHeadModel.from_pretrained(MODEL_DIR)                              
-        model.eval()
-        _ = model.to(device)
 
-        context_ids = eval_inputs.tolist()
+        context_ids = eval_inputs.tolist()[0]
+        generated=infill_with_ilm(                                                    
+            model,                                                                      
+            additional_tokens_to_ids,                                                   
+            context_ids,                                                                
+            num_infills=1)
         encoded=[]
         decoded=[]
-        for instance in context_ids :
-            generated=infill_with_ilm(                                                    
-                model,                                                                      
-                additional_tokens_to_ids,                                                   
-                instance,                                                                
-                num_infills=1)
-            encoded.append(ilm.tokenize_util.decode(instance, tokenizer))                         
-            decoded.append(ilm.tokenize_util.decode(generated[0], tokenizer))                         
+        encoded.append(ilm.tokenize_util.decode(context_ids, tokenizer))                         
+        decoded.append(ilm.tokenize_util.decode(generated[0], tokenizer))                         
         print("---------- Encoded ",i," ----------")
         for enc in encoded :
             print(enc)
