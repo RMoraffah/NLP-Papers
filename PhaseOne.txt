@@ -12,8 +12,7 @@ This baseline test has been completed. The performance of this model was:
 	- Epoch = 1.99
 
 The model can be found here:
-https://colab.research.google.com/drive/1TguhpUu2Eqfos6_IIGWhfn94FK-5tpVP?authuser=1
-
+https://colab.research.google.com/drive/1TguhpUu2Eqfos6_IIGWhfn94FK-5tpVP
 
 Roberta on the Quail Dataset
 For this baseline test, the Quail Dataset was converted into the Swag dataset format then ran on the Swag Model. 
