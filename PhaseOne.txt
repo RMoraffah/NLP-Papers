@@ -20,7 +20,8 @@ For this baseline test, the Quail Dataset was converted into the Swag dataset fo
 This was done because we feel our data better aligns with the data of the Swag model, so we wanted to see how 
 well the baseline performed on the new format.
 
-This model is still running on Google Collab and has been running for over 100 hours. The model can be found here: 
+This model is still running on Google Collab and has been running for over 100 hours. This model was not assigned 
+a GPU from Google Collab which is why it is taking longer to run than the others. The model can be found here: 
 https://colab.research.google.com/drive/1lLzcEaj1spbiXCJKprF-a7e4fSFTfkD_?authuser=1
 
 
