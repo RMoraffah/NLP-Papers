@@ -7,6 +7,9 @@ For our experiment, we've used almost the same parameters from the original pape
 We've conducted three experiments and made three baselines with these parameter settings:
 the learning_rate is 1e^-5, batch_size is 1, and we also used accumulation steps 25 to help with the low batch_size.
 
+Three baselines can be found here:
+https://colab.research.google.com/drive/1TguhpUu2Eqfos6_IIGWhfn94FK-5tpVP#scrollTo=y_Y2PiDf2not
+
 1) BERT model on the Quail Dataset
 This is exactly the same baseline model used in QuAIL paper. We've also trained this model on QuAIL dataset.
 
@@ -23,9 +26,6 @@ This baseline test has been completed. The performance of this model was:
 	- Accuracy = 0.6682
 	- Epoch = 1.99
 
-The model can be found here:
-https://colab.research.google.com/drive/1TguhpUu2Eqfos6_IIGWhfn94FK-5tpVP
-
 3) Roberta on the Quail Dataset
 In order to process the Quail Dataset with the existing training script, we've tried two methods: changing the format into Swag and training directly, and creating a preprocessor which is committed to the API of the hugging face. As a result, we found that 2nd method trains faster, and we decided to use this method from now on.
 
@@ -36,9 +36,6 @@ This baseline test has been completed. The performance of this model was:
 	
 However, it was also meaningful to try the 1st method because we could learn that training speed can change a little depending on how data is handled. In particular, the training speed was so slow in the early stages that we looked into the problem by checking the GPU, and learned how to properly connect the GPU to process the converted dataset.
 
-These models
-1st method : https://colab.research.google.com/drive/1lLzcEaj1spbiXCJKprF-a7e4fSFTfkD_?usp=sharing
-2nd method : https://colab.research.google.com/drive/1L7CySqpw2IbnJSYkESQ07UYI_CtolcKm
 --------------------------------------------------------------------------------------------------------------------
 
 Last of all, we've conducted extra experiment with Robert model on the Swag Dataset.
