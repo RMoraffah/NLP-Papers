@@ -27,7 +27,7 @@ This model is still running on Google Collab and has been running for over 100 h
 a GPU from Google Collab which is why it is taking longer to run than the others. The model can be found here: 
 https://colab.research.google.com/drive/1lLzcEaj1spbiXCJKprF-a7e4fSFTfkD_?usp=sharing
 
-+a) Robert on the Swag Dataset
+Extra experiment) Robert on the Swag Dataset
 The Swag baseline was ran on the Swag dataset due to our synthetically created datasets having a shorter 
 context than the others. The team wanted to have an idea on how well this dataset would perform on its own so we 
 could understand how it affects the overall performance.
