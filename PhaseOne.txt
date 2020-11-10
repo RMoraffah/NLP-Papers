@@ -1,4 +1,5 @@
 Phase One – Baseline Testing
+
 This phase of the project included having each member of the team run different models from HuggingFace 
 in order to establish a baseline model which could later be fine-tuned.
 
@@ -35,4 +36,6 @@ This baseline test has been completed. The performance of this model was:
 
 The model can be found here: 
 https://colab.research.google.com/github/ViktorAlm/notebooks/blob/master/MPC_GPU_Demo_for_TF_and_PT.ipynb?authuser=1#scrollTo=Q75NAj12wT7T
+Relevant Github:
+https://github.com/huggingface/transformers/tree/master/examples/multiple-choice
 
