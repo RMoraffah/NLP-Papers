@@ -3,7 +3,9 @@ Phase One – Baseline Testing
 This phase of the project included having each member of the team run different models from HuggingFace 
 in order to establish a baseline model which could later be fine-tuned.
 
-For our experiment, we've used almost the same parameters from the original paper as much as possible. We've conducted three experiements and made two baselines with these parameters: the learning_rate is 1e^-5, batch_size is 1, and we also used accumulation steps 25 to help with the low batch_size.
+For our experiment, we've used almost the same parameters from the original paper as much as possible.
+We've conducted three experiements and made two baselines with these parameters:
+the learning_rate is 1e^-5, batch_size is 1, and we also used accumulation steps 25 to help with the low batch_size.
 
 1) Longformer model on the Quail Dataset
 The longformer was chosen because it works well with longer documents and the Quail Dataset is our test set. 
