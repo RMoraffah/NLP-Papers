@@ -21,8 +21,7 @@ well the baseline performed on the new format.
 
 This model is still running on Google Collab and has been running for over 100 hours. This model was not assigned 
 a GPU from Google Collab which is why it is taking longer to run than the others. The model can be found here: 
-https://colab.research.google.com/drive/1lLzcEaj1spbiXCJKprF-a7e4fSFTfkD_?authuser=1
-
+https://colab.research.google.com/drive/1lLzcEaj1spbiXCJKprF-a7e4fSFTfkD_?usp=sharing
 
 Robert on the Swag Dataset
 The Swag baseline was ran on the Swag dataset due to our synthetically created datasets having a shorter 
