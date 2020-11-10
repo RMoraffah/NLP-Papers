@@ -27,14 +27,18 @@ The model can be found here:
 https://colab.research.google.com/drive/1TguhpUu2Eqfos6_IIGWhfn94FK-5tpVP
 
 3) Roberta on the Quail Dataset
-For this baseline test, the Quail Dataset was converted into the Swag dataset format then ran on the Swag Model. 
-This was done because we feel our data better aligns with the data of the Swag model, so we wanted to see how 
-well the baseline performed on the new format.
+In order to process the Quail Dataset with the existing training script, we've tried two methods: changing the format into Swag and training directly, and creating a preprocessor which is committed to the API of the hugging face. As a result, we found that 2nd method trains faster, and we decided to use this method from now on.
 
-This model is still running on Google Collab and has been running for over 100 hours. This model was not assigned 
-a GPU from Google Collab which is why it is taking longer to run than the others. The model can be found here: 
-https://colab.research.google.com/drive/1lLzcEaj1spbiXCJKprF-a7e4fSFTfkD_?usp=sharing
+This baseline test has been completed. The performance of this model was:
+	- Loss = 0.8762
+	- Accuracy = 0.6598
+	- Epoch = 1.99
+	
+However, it was also meaningful to try the 1st method because we could learn that training speed can change a little depending on how data is handled. In particular, the training speed was so slow in the early stages that we looked into the problem by checking the GPU, and learned how to properly connect the GPU to process the converted dataset.
 
+These models
+1st method : https://colab.research.google.com/drive/1lLzcEaj1spbiXCJKprF-a7e4fSFTfkD_?usp=sharing
+2nd method : https://colab.research.google.com/drive/1L7CySqpw2IbnJSYkESQ07UYI_CtolcKm
 --------------------------------------------------------------------------------------------------------------------
 
 Last of all, we've conducted extra experiment with Robert model on the Swag Dataset.
