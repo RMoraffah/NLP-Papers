@@ -4,7 +4,7 @@ This phase of the project included having each member of the team run different 
 in order to establish a baseline model which could later be fine-tuned.
 
 For our experiment, we've used almost the same parameters from the original paper as much as possible.
-We've conducted three experiements and made two baselines with these parameters:
+We've conducted three experiments and made two baselines with these parameter settings:
 the learning_rate is 1e^-5, batch_size is 1, and we also used accumulation steps 25 to help with the low batch_size.
 
 1) Longformer model on the Quail Dataset
