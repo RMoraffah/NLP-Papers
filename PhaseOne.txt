@@ -27,7 +27,7 @@ This baseline test has been completed. The performance of this model was:
 	- Epoch = 1.99
 
 3) Roberta on the Quail Dataset
-In order to process the Quail Dataset with the existing training script, we've tried two methods: changing the format into Swag and training directly, and creating a preprocessor which is committed to the API of the hugging face. As a result, we found that 2nd method trains faster, and we decided to use this method from now on.
+In order to process the Quail Dataset with the existing training script, we've tried two methods: changing the format into Swag and training directly, and creating a preprocessor which is committed to the API of the huggingface/datsets. As a result, we found that 2nd method trains faster, and we decided to use this method from now on.
 
 This baseline test has been completed. The performance of this model was:
 	- Loss = 0.8762
