@@ -4,7 +4,7 @@ This phase of the project included having each member of the team run different 
 in order to establish a baseline model which could later be fine-tuned.
 
 Longformer model on the Quail Dataset
-The longformer was chosen because it works well with longer documents. 
+The longformer was chosen because it works well with longer documents and the Quail Dataset is our test set. 
 
 This baseline test has been completed. The performance of this model was:
 	- Loss = 0.8903
@@ -25,7 +25,7 @@ https://colab.research.google.com/drive/1lLzcEaj1spbiXCJKprF-a7e4fSFTfkD_?authus
 
 
 Robert on the Swag Dataset
-The Swag baseline was ran on the Swag dataset due to one of the synthetically created datasets having a shorter 
+The Swag baseline was ran on the Swag dataset due to our synthetically created datasets having a shorter 
 context than the others. The team wanted to have an idea on how well this dataset would perform on its own so we 
 could understand how it affects the overall performance.
 
