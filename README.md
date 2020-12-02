@@ -1,4 +1,7 @@
-# Phase 2: Automated Data Creation 
+# Automated Data Creation 
+## Final code can be found at 
+
+# Automated Data Creation 
 
 ## Final dataset can be found at [[THIS LINK]](https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing)
 + We each were to extract 10K datapoints from different datasets so we can build a robust model. 
