@@ -1,7 +1,7 @@
-# Automated Data Creation 
+# Data evaluation and propose model(~12/1)
 ## Final code can be found at [[THIS LINK]](https://github.com/RMoraffah/NLP-Papers/blob/master/Final_CSE576_Quail_Adversarial.ipynb)
 
-# Automated Data Creation 
+# Synthetic data Creation (~11/14)
 
 ## Final dataset can be found at [[THIS LINK]](https://drive.google.com/drive/folders/1m_xmnU3XAKvzLStDeqtW3dee6KXU9s9U?usp=sharing)
 + We each were to extract 10K datapoints from different datasets so we can build a robust model. 
