@@ -1,5 +1,7 @@
 # Data evaluation and propose model(~12/1)
-## Final code can be found at [[THIS LINK]](https://github.com/RMoraffah/NLP-Papers/blob/master/Final_CSE576_Quail_Adversarial.ipynb)
+## Final code can be found at [[THIS LINK]](https://github.com/RMoraffah/NLP-Papers/blob/master/Final_CSE576_Quail_Adversarial.ipynb))
++ We used a colab to experiment diverse settings and models like BERT, RoBERTa, Longformer
++ Finally, we selected RoBERTa as our baseline, and we proposed new model names RoBERTa-adv
 
 # Synthetic data Creation (~11/14)
 
